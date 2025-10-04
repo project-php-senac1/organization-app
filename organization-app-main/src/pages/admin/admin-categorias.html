@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Delta Store</title>
+    <link rel="stylesheet" href="/organization-app-main/src/pages/admin/styles/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="/organization-app-main/src/assets/images/logodelta.png" alt="Logo Delta" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="/organization-app-main/src/pages/admin/admin-index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-produtos.html"><i class="fas fa-box-open"></i> Produtos</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-usuarios.html"><i class="fas fa-users"></i> Usuários</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/organization-app-main/src/pages/client/login.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <input type="search" placeholder="Pesquisar...">
+                <button class="btn-primary">Cadastrar categoria</button>
+            </header>
+            <section class="content-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>DESCRIÇÃO</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Xbox Series X, 1TB SSD, Preto</td>
+                            <td>Apresentando o Xbox Series X. Jogue milhares de títulos de quatro gerações de consoles...</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>516</td>
+                            <td>Controle PS5 DualSense</td>
+                            <td>Sinta o feedback fisicamente responsivo às suas ações no jogo com atuadores duplos...</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>056</td>
+                            <td>Marvel's Spider-Man 2</td>
+                            <td>Os Spider-Man Peter Parker e Miles Morales retornam para uma nova e emocionante aventura...</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>God of War Ragnarok - PS4</td>
+                            <td>Em God of War: Ragnarok, acompanhe a jornada de Kratos e Atreus pelos Nove Reinos...</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="/organization-app-main/src/pages/admin/scripts/admin.js"></script>
+</body>
+</html>

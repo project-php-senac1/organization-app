@@ -1,0 +1,357 @@
+/* Importando a fonte Nunito Sans do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap');
+
+/* === VARIÁVEIS DE COR E ESTILOS GLOBAIS === */
+:root {
+    --cor-fundo-escuro: #161921;
+    --cor-fundo-medio: #1F232E;
+    --cor-primaria: #6D28D9; /* Roxo vibrante */
+    --cor-secundaria-laranja: #F97316;
+    --cor-sucesso: #4ADE80;
+    --cor-texto: #F8FAFC;
+    --cor-texto-suave: #94A3B8;
+    --cor-borda: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === COMPONENTES REUTILIZÁVEIS === */
+.btn {
+    display: inline-block; /* Importante para 'a' tags */
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+}
+.btn-primary:hover { filter: brightness(1.2); }
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda);
+}
+.btn-secondary:hover { background-color: var(--cor-borda); }
+
+.btn-accent {
+    background-color: var(--cor-secundaria-laranja);
+    color: var(--cor-texto);
+    width: 100%;
+}
+.btn-accent:hover { filter: brightness(1.1); }
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--cor-primaria);
+    padding-left: 1rem;
+}
+
+/* === HEADER === */
+header {
+    background-color: var(--cor-fundo-medio);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--cor-borda);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-container img { height: 40px; }
+.header-text { font-weight: 700; }
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+.cart-icon {
+    position: relative;
+    color: var(--cor-texto-suave);
+    transition: color 0.3s;
+}
+.cart-icon:hover { color: var(--cor-texto); }
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 7px;
+    display: none; /* Começa escondido */
+}
+
+/* === PÁGINA INICIAL === */
+.hero-banner img { width: 100%; height: 450px; object-fit: cover; }
+.product-section { margin-top: 4rem; }
+/* ADICIONE ESTAS NOVAS REGRAS */
+.product-grid {
+    display: grid;
+    /* Tenta criar colunas de no mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-carousel::-webkit-scrollbar { display: none; }
+.product-card {
+    flex: 0 0 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+.product-card:hover { transform: scale(1.03); }
+.product-card img { width: 100%; height: 100%; object-fit: cover; }
+.discount-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: var(--cor-secundaria-laranja);
+    color: var(--cor-texto);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* === PÁGINA DE PRODUTO === */
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+@media (min-width: 992px) { .product-detail-layout { grid-template-columns: 1fr 1fr; } }
+.product-image img { border-radius: 8px; }
+.product-info h1 { font-size: 2.5rem; font-weight: 900; }
+.divider { border: none; height: 1px; background-color: var(--cor-borda); margin: 1.5rem 0; }
+.price { font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem; }
+.action-buttons { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 768px) { .action-buttons { flex-direction: row; } }
+.product-description { margin-top: 3rem; }
+.product-description h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+.product-description p { color: var(--cor-texto-suave); line-height: 1.6; }
+
+/* === PÁGINA DO CARRINHO === */
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: var(--cor-fundo-medio);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.cart-item img { border-radius: 4px; }
+.cart-item-info h4 { margin-bottom: 0.5rem; }
+.cart-item-info p { color: var(--cor-texto-suave); }
+.cart-total { text-align: right; margin-top: 2rem; font-size: 1.5rem; font-weight: 700; }
+.cart-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; }
+.empty-cart-message { text-align: center; padding: 4rem 0; }
+
+/* === PÁGINA DE CONFIRMAÇÃO === */
+.confirmation-box { max-width: 600px; margin: 6rem auto 0; text-align: center; }
+.confirmation-box h1 { font-size: 2rem; margin-bottom: 1.5rem; }
+.confirmation-box p { font-size: 1.1rem; color: var(--cor-texto-suave); line-height: 1.7; }
+.confirmation-box .fa-check-circle { color: var(--cor-sucesso); }
+
+/* === PÁGINA DE LOGIN === */
+.login-page-background {
+    background-image: url('/organization-app-main/src/assets/images/Fundo.png'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.login-container {
+    background-color: rgba(31, 35, 46, 0.9);
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--cor-borda);
+}
+.login-logo { height: 100px; margin-bottom: 1rem; margin-left: 100px;}
+.login-title { font-size: 2rem; font-weight: 900; margin-bottom: 2rem; }
+.login-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--cor-fundo-escuro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.login-form input:focus { outline: none; border-color: var(--cor-primaria); }
+
+
+/* CSS para o corpo do card de produto */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+.card-body {
+    padding: 1rem;
+    background-color: var(--cor-fundo-medio);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o corpo do card crescer para preencher o espaço */
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-height: 44px; /* Garante que os títulos tenham altura similar */
+}
+.card-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin: 0.5rem 0 1rem;
+}
+.card-body .btn {
+    width: 100%;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+/* === FOOTER === */
+.site-footer {
+    background-color: var(--cor-fundo-medio);
+    padding-top: 4rem;
+    margin-top: 6rem;
+    border-top: 1px solid var(--cor-borda);
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+.footer-logo {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.footer-about {
+    color: var(--cor-texto-suave);
+    line-height: 1.6;
+}
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+.footer-column ul a {
+    color: var(--cor-texto-suave);
+    transition: color 0.3s;
+}
+.footer-column ul a:hover {
+    color: var(--cor-primaria);
+}
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+.social-icons a {
+    color: var(--cor-texto-suave);
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: var(--cor-primaria);
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+}
+
+/* === AJUSTES NO HEADER PARA CENTRALIZAR O TEXTO === */
+
+/* 1. Prepara o container do header para o posicionamento */
+header .container {
+    position: relative; /* Essencial para o posicionamento absoluto do filho */
+}
+
+/* 2. Estiliza e centraliza o texto */
+.header-text {
+    /* Posicionamento mágico */
+    position: absolute; /* Tira o texto do fluxo normal */
+    left: 50%;          /* Move o início do texto para o meio da tela */
+    top: 50%;           /* Move o topo do texto para o meio da altura do header */
+    transform: translate(-50%, -50%); /* Centraliza o texto perfeitamente */
+
+    /* Estilo do texto */
+    font-size: 1.25rem; /* Fonte maior, como você pediu */
+    font-weight: 700;
+    color: var(--cor-texto-suave);
+    
+    /* Impede que o texto bloqueie o clique em outros elementos */
+    pointer-events: none; 
+}
+
+/* 3. Garante que o logo não fique muito pequeno */
+.logo-container img {
+    height: 40px;
+}
+
+/* 4. [IMPORTANTE] Esconde o texto em telas pequenas para não bagunçar */
+@media (max-width: 992px) {
+    .header-text {
+        display: none; /* O texto some em telas de tablet e celular */
+    }
+}

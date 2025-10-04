@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários - Delta Store</title>
+    <link rel="stylesheet" href="/organization-app-main/src/pages/admin/styles/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="/organization-app-main/src/assets/images/logodelta.png" alt="Logo Delta" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="/organization-app-main/src/pages/admin/admin-index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-produtos.html"><i class="fas fa-box-open"></i> Produtos</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="/organization-app-main/src/pages/admin/admin-usuarios.html"><i class="fas fa-users"></i> Usuários</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/organization-app-main/src/pages/client/login.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <input type="search" placeholder="Pesquisar...">
+                <button class="btn-primary">Cadastrar administrador</button>
+            </header>
+            <section class="content-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>E-MAIL</th>
+                            <th>SENHA</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>009</td>
+                            <td>Calleri</td>
+                            <td>calleri@gmai.com</td>
+                            <td>15100</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>010</td>
+                            <td>Luciano</td>
+                            <td>luciano@hotmail.com</td>
+                            <td>05605</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>007</td>
+                            <td>Lucas</td>
+                            <td>lucas@outlook.com</td>
+                            <td>05665</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>099</td>
+                            <td>Hernan</td>
+                            <td>hernan@gmail.com</td>
+                            <td>56156</td>
+                            <td class="actions">
+                                <a href="#" class="delete">excluir</a>
+                                <a href="#" class="edit">editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="/organization-app-main/src/pages/admin/scripts/admin.js"></script>
+</body>
+</html>
